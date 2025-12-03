@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="decrease()">-</button>
+<span id="number">0</span>
+<button onclick="increase()">+</button>
+
+<script>
+
+
+    let count = localStorage.getItem("count");
+
+    if (count === null) {
+        count = 0;
+    } else {
+        count = parseInt(count); 
+    }
+
+    
+    document.getElementById("number").innerText = count;
+
+
+    
+    function increase() {
+        count++;
+        document.getElementById("number").innerText = count;
+        localStorage.setItem("count", count);
+    }
+
+    
+    function decrease() {
+        count--;
+        document.getElementById("number").innerText = count;
+        localStorage.setItem("count", count);
+    }
+
+</script>
+
+</body>
+</html>
